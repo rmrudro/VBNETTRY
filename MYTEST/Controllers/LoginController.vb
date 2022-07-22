@@ -19,9 +19,22 @@ Namespace Controllers
 
                 Dim obj As tbl_User = db.tbl_User.Where(Function(x) x.UserName.Equals(tbl_users.UserName) And x.Password.Equals(tbl_users.Password)).FirstOrDefault
 
-                'Dim obj As tbl_User = db.tbl_User.Where(tbl_user.UserName.Equals(a:=tbl_user.UserName))
+                If obj IsNot Nothing Then
+                    Session("UserName") = obj.UserName.ToString
+                    Return RedirectToAction("UserDashBoard")
+                End If
 
             End If
+            Return View(tbl_users)
+
+        End Function
+
+        Function UserDashBoard()
+            If Session("UserName") IsNot Nothing Then
+                Return View()
+            End If
+            Return RedirectToAction("Index")
+
 
         End Function
     End Class

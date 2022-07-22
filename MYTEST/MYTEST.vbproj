@@ -276,6 +276,7 @@
     <Content Include="Views\Category\Edit.vbhtml" />
     <Content Include="Views\Category\Index.vbhtml" />
     <Content Include="Views\Login\Index.vbhtml" />
+    <Content Include="Views\Login\UserDashBoard.vbhtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
